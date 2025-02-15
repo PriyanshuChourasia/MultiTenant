@@ -27,3 +27,16 @@ To start with typescript project the setup will start with some installations
 6. Remember anytime you get error in all files on type declaration or every file is showing error. Then first try to Restart the TS server
 
    1. Press CTRL+SHIFT+P for windows
+7. Now download Nodemon, nodemon is a tool that helps to develop Node.js based application automatically restarting the node application when the file changes in the directory is detected. Nodemon is for development purpose.
+
+   1. npm install -D nodemon
+8. To solve path alias issue install tsconfig paths
+
+   1. npm install -D tsconfig-paths
+   2. If you face path issue after running build then you must check tsconfig.json file and should install few packages
+      1. npm install --save-dev tsc-alias
+         1. This package configuration will solve your issue of compiled code and remember always set your rootdir to "src" because this where the build will be made if you put a dot then it will build every folder and file but for production we only need src folder.
+
+### After setting up a project
+
+After setting up project with typescript build the project to test the production version or build version the errors in build. to deal with build command please look package.json
