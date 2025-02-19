@@ -2,4 +2,4 @@ import mongoose from "mongoose";
 import { UserSchema } from "./UserSchema";
 
 
-export const Users = mongoose.model('Users',UserSchema);
+export const User = mongoose.model('Users',UserSchema);
