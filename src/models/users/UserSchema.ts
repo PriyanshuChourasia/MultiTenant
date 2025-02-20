@@ -1,5 +1,5 @@
-import mongoose, { Schema } from "mongoose";
-import { Gender, IUserSchemaInterface } from "./IUserSchemaInterface";
+import {  Schema } from "mongoose";
+import { IUserSchemaInterface } from "./IUserSchemaInterface";
 
 
 
@@ -10,7 +10,17 @@ export const UserSchema: Schema = new Schema<IUserSchemaInterface>({
     },
     email:{
         type: String,
-        required: true
+        required: true,
+        unique: true
+    },
+    username:{
+        type: String,
+        required: false,
+        unique: true
+    },
+    applicationId:{
+        type: Schema.Types.ObjectId,
+        ref:'Applications'
     },
     phoneNumber:{
         type: String,
@@ -19,13 +29,10 @@ export const UserSchema: Schema = new Schema<IUserSchemaInterface>({
     password:{
         type: String,
         required: true,
-    },
-    address:{
-        type: String,
-        required: false
-    },
-    gender:{
-        type: String,
-        enum: Gender
+    }
+},{
+    timestamps:{
+        createdAt: "created_at",
+        updatedAt: "updated_at"
     }
 });
